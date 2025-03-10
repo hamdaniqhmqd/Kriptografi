@@ -1,5 +1,3 @@
-import string
-
 def vigenere_encrypt(plaintext, key, alphabet):
     key = key.upper()
     ciphertext = ""
@@ -35,7 +33,7 @@ def vigenere_decrypt(ciphertext, key, alphabet):
     return plaintext
 
 
-alphabet = string.ascii_uppercase  
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
 plaintext = "AHMAD HAMDANI"
 key = "AHMAD"
 
