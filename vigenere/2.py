@@ -2,7 +2,7 @@ def vigenere_encrypt(plaintext, key, alphabet):
     key = key.upper()
     ciphertext = ""
     key_index = 0  
-    alphabet_size = len(alphabet)
+    alphabet_size = len(alphabet.upper())
 
     for char in plaintext:
         if char not in alphabet:
@@ -19,7 +19,7 @@ def vigenere_decrypt(ciphertext, key, alphabet):
     key = key.upper()
     plaintext = ""
     key_index = 0  
-    alphabet_size = len(alphabet)
+    alphabet_size = len(alphabet.upper())
 
     for char in ciphertext:
         if char not in alphabet:
