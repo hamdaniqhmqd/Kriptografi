@@ -41,7 +41,7 @@ alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # Contoh penggunaan
 plaintext = "AHMAD HAMDANI"
-key = "AHMAD"
+key = "RORONOAZORO"
 
 ciphertext = vigenere_encrypt(plaintext, key, alphabet)
 decrypted_text = vigenere_decrypt(ciphertext, key, alphabet)
