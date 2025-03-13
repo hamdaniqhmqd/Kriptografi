@@ -27,9 +27,9 @@ def find_position(matrix, char):
     return None
 
 def prepare_text(plaintext):
-    """Mempersiapkan teks: menyimpan posisi spasi dan menghapus spasi"""
+    """Mempersiapkan teks: mengganti spasi dengan ?, menyimpan posisi spasi"""
     positions = [i for i, char in enumerate(plaintext) if char == " "]  # Simpan posisi spasi
-    text = plaintext.replace(" ", "").upper()  # Hapus spasi, ubah ke huruf besar
+    text = plaintext.replace(" ", "?").upper()  # Ganti spasi dengan ?
 
     # Pisahkan teks menjadi pasangan huruf
     pairs = []
@@ -81,16 +81,13 @@ def encrypt_text(text, matrix):
     return encrypted_text, positions
 
 def decrypt_text(ciphertext, matrix, positions):
-    """Proses dekripsi dan mengembalikan spasi"""
+    """Proses dekripsi dan mengembalikan ? menjadi spasi"""
     pairs = [(ciphertext[i], ciphertext[i + 1]) for i in range(0, len(ciphertext), 2)]
     decrypted_text = "".join("".join(decrypt_pair(matrix, a, b)) for a, b in pairs)
     
-    # Kembalikan spasi pada posisi semula
-    decrypted_text = list(decrypted_text)
-    for pos in positions:
-        decrypted_text.insert(pos, " ")
-    
-    return "".join(decrypted_text)
+    # Kembalikan ? menjadi spasi
+    decrypted_text = decrypted_text.replace("?", " ")
+    return decrypted_text
 
 # ========== CONTOH PENGGUNAAN ==========
 key = "SECURITY CODE"
