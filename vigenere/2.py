@@ -5,7 +5,9 @@ def vigenere_encrypt(plaintext, key, alphabet):
     alphabet_size = len(alphabet)
 
     for char in plaintext:
-        if char not in alphabet:
+        if char == " ":
+            ciphertext += "?"  # Mengganti spasi dengan tanda tanya
+        elif char not in alphabet:
             ciphertext += char
         else:
             row = alphabet.index(char)
@@ -24,7 +26,9 @@ def vigenere_decrypt(ciphertext, key, alphabet):
     alphabet_size = len(alphabet)
 
     for char in ciphertext:
-        if char not in alphabet:
+        if char == "?":
+            plaintext += " "  # Mengembalikan tanda tanya menjadi spasi
+        elif char not in alphabet:
             plaintext += char
         else:
             col = alphabet.index(key[key_index % len(key)])
