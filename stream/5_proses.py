@@ -6,11 +6,14 @@ class BinConvert:
 
     def get_string_to_bin(self):
         self.binary = ''.join(f"{ord(c):08b}" for c in self.text)
+        print(f"String to Binary    = {self.binary}")
         return self.binary
 
     def bin_to_text(self, binary_text):
         chars = [chr(int(binary_text[i:i + 8], 2)) for i in range(0, len(binary_text), 8)]
         self.decoded_text = ''.join(chars)
+        print(f"Chars    = {chars}")
+        print(f"Decoded    = {self.decoded_text}")
 
     def get_bin_to_text(self):
         return self.decoded_text
