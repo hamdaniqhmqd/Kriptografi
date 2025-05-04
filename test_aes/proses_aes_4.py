@@ -41,8 +41,8 @@ def aes_decrypt_debug(ciphertext, key):
         return None
 
 # Key harus 16, 24, atau 32 byte
-key = b'ahmadhamdani1234'  # 16-byte key untuk AES-128
-plaintext = b'Hello, ahmad'  # Bisa kurang dari 16 byte, akan dipad otomatis
+key = b'233307092'  # 16-byte key untuk AES-128
+plaintext = b'Halo, namaku ahmad, nama kamu siapa?, Halo, namaku ahmad, nama kamu siapa?, Halo, namaku ahmad, nama kamu siapa?'  # Bisa kurang dari 16 byte, akan dipad otomatis
 
 ciphertext = aes_encrypt_debug(plaintext, key)
 decrypted_plaintext = aes_decrypt_debug(ciphertext, key)
